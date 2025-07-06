@@ -33,7 +33,7 @@ climate:
 
 ## Features
 
-- **Temperature**: 16-32�C (60-90�F)
+- **Temperature**: 16-32°C (60-90°F)
 - **Modes**: Auto, Cool, Dry, Fan, Heat (untested)
 - **Fan Speed**: Low, Medium, High, Auto
 - **Swing**: Vertical only
