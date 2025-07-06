@@ -1,0 +1,10 @@
+# ESPHome Custom Component Development Configuration
+# This file configures clangd to find compile_commands.json in the ESPHome build directory
+# 
+# To generate the compilation database:
+# 1. Run: esphome compile test_device.yaml (or your actual device YAML)
+# 2. This will create .esphome/build/<device-name>/compile_commands.json
+# 3. clangd will automatically use it for C++ IntelliSense
+
+CompileFlags:
+  CompilationDatabase: .esphome/build/test-ykh531e

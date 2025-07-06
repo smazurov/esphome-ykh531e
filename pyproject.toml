@@ -1,0 +1,22 @@
+[project]
+name = "esphome-ykh531e"
+version = "1.0.0"
+description = "ESPHome YK-H/531E IR Remote custom component"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["esphome>=2025.6.1", "pip"]
+
+[tool.pylsp-mypy]
+enabled = true
+live_mode = false
+
+[tool.pyright]
+reportMissingImports = false
+reportMissingModuleSource = false
+reportMissingTypeStubs = false
+reportUnknownParameterType = false
+reportUnknownArgumentType = false
+reportUnknownVariableType = false
+reportUnknownMemberType = false
+reportGeneralTypeIssues = false
+reportArgumentType = false

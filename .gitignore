@@ -1,0 +1,32 @@
+# ESPHome Custom Component - YKH531E
+# Gitignore for custom component development
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyc
+
+# ESPHome specific
+.esphome/
+secrets.yaml
+
+# Python virtual environments
+.venv/
+venv/
+.python-version
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.so
+build/
+dist/
+
+# UV lock and cache (Python package manager)
+.uv/

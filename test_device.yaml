@@ -1,0 +1,43 @@
+esphome:
+  name: test-ykh531e
+  friendly_name: YKH531E Test Device
+
+esp32:
+  board: esp32dev
+  framework:
+    type: esp-idf
+
+wifi:
+  ssid: "TestNetwork" 
+  password: "TestPassword"
+  ap:
+    ssid: "YKH531E-Fallback"
+    password: "fallback123"
+
+logger:
+
+api:
+
+ota:
+  - platform: esphome
+    password: "ota-password"
+
+external_components:
+  - source:
+      type: local
+      path: ./esphome/components
+    components: [ykh531e]
+
+remote_transmitter:
+  - pin: GPIO14
+    carrier_duty_percent: 50%
+    id: ir_transmitter
+
+remote_receiver:
+  - pin: GPIO27
+    dump: all
+
+climate:
+  - platform: ykh531e
+    name: "YKH531E Climate"
+    transmitter_id: ir_transmitter
