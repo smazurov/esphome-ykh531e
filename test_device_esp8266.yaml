@@ -1,0 +1,39 @@
+esphome:
+  name: test-ykh531e-esp8266
+
+esp8266:
+  board: esp01_1m
+
+logger:
+
+external_components:
+  - source:
+      type: local
+      path: ./esphome/components
+    components: [ykh531e]
+
+remote_transmitter:
+  pin: GPIO4
+  carrier_duty_percent: 50%
+  id: ir_transmitter
+
+remote_receiver:
+  pin:
+    number: GPIO5
+    inverted: true
+  id: ir_receiver
+
+climate:
+  - platform: ykh531e
+    name: "Cooling Only"
+    transmitter_id: ir_transmitter
+    receiver_id: ir_receiver
+    supports_heat: false
+    supports_cool: true
+    use_fahrenheit: true
+  - platform: ykh531e
+    name: "Heating Enabled"
+    transmitter_id: ir_transmitter
+    receiver_id: ir_receiver
+    supports_heat: true
+    supports_cool: true

@@ -14,7 +14,8 @@ This is an ESPHome custom component for the YKH531E air conditioner remote contr
 - Run Python commands: `uv run <command>`
 
 ### ESPHome Testing
-- Test the component: `uv run esphome compile test_device.yaml`
+- Test ESP32 / ESP-IDF: `uv run esphome compile test_device.yaml`
+- Test ESP8266 with heat disabled and enabled: `uv run esphome compile test_device_esp8266.yaml`
 - Upload to device: `uv run esphome upload test_device.yaml`
 - View logs: `uv run esphome logs test_device.yaml`
 
@@ -47,12 +48,15 @@ The component extends `climate_ir::ClimateIR` base class and implements the YKH5
 - Includes the custom component via `external_components` with local path
 - Sets up climate entity with component platform
 
+`test_device_esp8266.yaml` covers the ESP01 1 MB target with separate cooling-only
+and heating-enabled climate entities.
+
 ### Build System
 - Uses Hatchling build backend
 - Packages the component for distribution
 - Includes C++ source files in wheel
 - Configured for Python 3.12+
-- ESPHome 2025.6.1+ dependency
+- ESPHome 2025.11.0+ dependency
 
 ## Component Usage
 
