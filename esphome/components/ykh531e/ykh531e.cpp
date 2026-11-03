@@ -346,8 +346,8 @@ namespace esphome
       traits.add_supported_mode(climate::CLIMATE_MODE_DRY);
       traits.add_supported_mode(climate::CLIMATE_MODE_FAN_ONLY);
       
-      // Only add heat if configured in YAML
-      if (this->supports_heat_)
+      // Read traits instead of fields whose storage changed in ESPHome 2026.10.
+      if (climate_ir::ClimateIR::traits().supports_mode(climate::CLIMATE_MODE_HEAT))
         traits.add_supported_mode(climate::CLIMATE_MODE_HEAT);
 
       traits.set_supported_fan_modes(
